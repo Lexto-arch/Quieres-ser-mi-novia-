@@ -946,71 +946,220 @@ body {
 }
 
 /* ==========================================================================
+   BOTÓN HAMBURGUESA (menú móvil)
+   ========================================================================== */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nav-hamburger:hover {
+  background: rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 12px var(--emerald-glow);
+}
+
+.ham-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--emerald-300);
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animación X cuando el menú está abierto */
+.nav-hamburger.is-open .ham-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger.is-open .ham-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-hamburger.is-open .ham-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================================================
    RESPONSIVIDAD MÓVIL OPTIMIZADA (CELULARES Y TABLETAS)
    ========================================================================== */
+
+/* Prevenir scroll horizontal global */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 @media (max-width: 768px) {
+  /* Navbar en modo móvil: se convierte en panel desplegable */
   .floating-navbar {
-    width: 96%;
+    width: calc(100% - 24px);
+    max-width: none;
     top: 12px;
-    padding: 6px 14px;
+    left: 12px;
+    right: 12px;
+    transform: none;
+    padding: 10px 16px;
+    border-radius: 18px;
+    flex-wrap: wrap;
+    align-items: center;
   }
+
+  .nav-brand {
+    flex: 1;
+    font-size: 1rem;
+  }
+
   .nav-brand span:last-child {
     font-size: 1rem;
   }
-  .nav-link {
-    padding: 6px 10px;
-    font-size: 0.8rem;
+
+  /* Mostrar el botón hamburguesa */
+  .nav-hamburger {
+    display: flex;
   }
+
+  /* Menú links: oculto por defecto, se despliega verticalmente */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+    padding: 10px 0 4px;
+    border-top: 1px solid rgba(52, 211, 153, 0.2);
+    margin-top: 8px;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-link:hover {
+    border: none;
+    background: rgba(139, 92, 246, 0.18);
+  }
+
+  .nav-link.proposal-nav-link {
+    margin-top: 4px;
+    border-radius: 12px;
+  }
+
+  /* Secciones */
   .hero-section {
-    padding-top: 95px;
+    padding-top: 100px;
     padding-bottom: 50px;
   }
+
   .section-wrapper {
     padding: 70px 16px;
   }
+
   .hero-counter-card {
     flex-direction: column;
     gap: 12px;
     width: 100%;
     padding: 16px 20px;
   }
+
   .counter-divider {
     width: 60%;
     height: 1px;
   }
+
   .modal-glass-card {
     padding: 28px 18px;
     max-height: 85vh;
     overflow-y: auto;
   }
+
+  .proposal-card {
+    padding: 36px 22px;
+    border-radius: 24px;
+  }
 }
 
 @media (max-width: 480px) {
+  .floating-navbar {
+    width: calc(100% - 16px);
+    left: 8px;
+    right: 8px;
+    top: 8px;
+  }
+
   .hero-actions {
     flex-direction: column;
     width: 100%;
   }
-  .btn-primary-emerald, .btn-secondary-purple {
+
+  .btn-primary-emerald,
+  .btn-secondary-purple {
     width: 100%;
     justify-content: center;
     padding: 12px 20px;
     font-size: 0.95rem;
   }
+
   .hero-faith-badge {
-    font-size: 0.82rem;
-    padding: 6px 14px;
+    font-size: 0.8rem;
+    padding: 6px 12px;
     text-align: center;
   }
-  .nav-link span:last-child {
-    display: none;
-  }
-  .nav-link {
-    padding: 8px;
-  }
+
   .section-title {
-    font-size: 1.85rem;
+    font-size: 1.75rem;
   }
+
   .section-description {
+    font-size: 0.92rem;
+  }
+
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+
+  .proposal-card {
+    padding: 28px 16px;
+  }
+
+  .proposal-buttons-zone {
+    flex-direction: column;
+    gap: 14px;
+    min-height: auto;
+  }
+
+  .btn-proposal-yes {
+    padding: 14px 36px;
+    font-size: 1.15rem;
+  }
+
+  .celebration-body {
+    padding: 16px;
     font-size: 0.95rem;
   }
+
+  .counter-number {
+    font-size: 1.8rem;
+  }
 }
+

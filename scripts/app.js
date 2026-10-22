@@ -15,7 +15,45 @@ document.addEventListener('DOMContentLoaded', () => {
   initCosmicCursor();
   initQuickNavigation();
   initMusicHelperModal();
+  initMobileMenu();
 });
+
+// 0. Menú hamburguesa para móviles
+function initMobileMenu() {
+  const hamburger = document.getElementById('navHamburger');
+  const navLinks  = document.getElementById('navLinks');
+
+  if (!hamburger || !navLinks) return;
+
+  // Toggle al hacer clic en el botón
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = hamburger.classList.toggle('is-open');
+    navLinks.classList.toggle('is-open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Cerrar el menú al hacer clic en cualquier link
+  navLinks.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('is-open');
+      navLinks.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Cerrar el menú al hacer clic fuera del nav
+  document.addEventListener('click', (e) => {
+    const navbar = document.getElementById('mainNavbar');
+    if (navbar && !navbar.contains(e.target)) {
+      hamburger.classList.remove('is-open');
+      navLinks.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+
 
 // 1. Personalización de Nombre y Días Juntos
 function initPersonalization() {
