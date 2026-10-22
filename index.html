@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Elizabeth ✧ Mil Motivos &amp; Nuestro Universo</title>
+  <meta name="description" content="Un universo creado para Elizabeth: mil motivos para amarte, constelaciones de palabras de amor y nuestro tocadiscos eterno.">
+  <meta name="theme-color" content="#070311">
+
+  <!-- Estilos del Sistema -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/universe.css">
+  <link rel="stylesheet" href="styles/turntable.css">
+  <link rel="stylesheet" href="styles/letters.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       BARRA DE NAVEGACIÓN FLOTANTE (CÁPSULA GLASSMORPHISM)
+       ========================================================================== -->
+  <nav class="floating-navbar" id="mainNavbar">
+    <a href="#heroSection" class="nav-brand" data-scroll-to="heroSection">
+      <span class="nav-brand-icon">💖</span>
+      <span>Nuestro Universo</span>
+    </a>
+    <ul class="nav-links">
+      <li>
+        <a href="#heroSection" class="nav-link emerald-glow" data-scroll-to="heroSection">
+          <span>✨</span> Inicio
+        </a>
+      </li>
+      <li>
+        <a href="#universoSection" class="nav-link" data-scroll-to="universoSection">
+          <span>🪐</span> 1,000 Estrellas
+        </a>
+      </li>
+      <li>
+        <a href="#tocadiscosSection" class="nav-link" data-scroll-to="tocadiscosSection">
+          <span>🎶</span> Tocadiscos
+        </a>
+      </li>
+      <li>
+        <a href="#libroSection" class="nav-link" data-scroll-to="libroSection">
+          <span>📜</span> Motivos
+        </a>
+      </li>
+      <li>
+        <a href="#cartaSection" class="nav-link" data-scroll-to="cartaSection">
+          <span>💌</span> Carta
+        </a>
+      </li>
+      <li>
+        <a href="#propuestaSection" class="nav-link proposal-nav-link" data-scroll-to="propuestaSection">
+          <span>💍</span> ¿Quieres ser mi novia?
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ==========================================================================
+       SECCIÓN HERO: BIENVENIDA CELESTIAL
+       ========================================================================== -->
+  <header class="hero-section" id="heroSection">
+    <div class="hero-aurora-glow"></div>
+    <div class="hero-content">
+      
+      <div class="hero-badge">
+        <span>✨</span> Un rincón eterno creado solo para ti
+      </div>
+
+      <div class="hero-faith-badge">
+        <span>✝️</span> «Las muchas aguas no podrán apagar el amor, ni lo ahogarán los ríos» — Cantares 8:7
+      </div>
+
+      <div class="hero-title-cursive">Para la dueña de mis pensamientos,</div>
+
+      <h1 class="hero-main-title">
+        <span class="girlfriend-name-container" id="girlfriendNameWrapper" title="Haz clic para personalizar su nombre">
+          <span id="girlfriendName">Elizabeth</span>
+          <button class="edit-icon-btn" id="editNameBtn" aria-label="Editar nombre">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+          </button>
+        </span>
+      </h1>
+
+      <p class="hero-subtitle">
+        He encendido un cosmos donde cada estrella brilla con una razón por la que te amo, 
+        nuestras constelaciones guardan secretos de fe y complicidad, y este tocadiscos gira con la melodía de nuestras almas.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#universoSection" class="btn-primary-emerald" data-scroll-to="universoSection">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"/>
+          </svg>
+          <span>Explorar el Universo (1,000 Estrellas)</span>
+        </a>
+
+        <a href="#tocadiscosSection" class="btn-secondary-purple" data-scroll-to="tocadiscosSection">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+          </svg>
+          <span>Poner el Tocadiscos</span>
+        </a>
+
+        <a href="#propuestaSection" class="btn-proposal-hero" data-scroll-to="propuestaSection">
+          <span>💍</span>
+          <span>¿Quieres ser mi novia?</span>
+        </a>
+      </div>
+
+      <!-- Tarjeta de Días y Estadísticas -->
+      <div class="hero-counter-card">
+        <div class="counter-stat">
+          <span class="counter-number">1,000</span>
+          <span class="counter-label">Motivos para Amarte</span>
+        </div>
+        <div class="counter-divider"></div>
+        <div class="counter-stat" id="daysStatContainer" style="cursor: pointer;" title="Haz clic para ajustar la fecha de inicio">
+          <span class="counter-number" id="relationshipDaysCount">25</span>
+          <span class="counter-label">
+            Días a tu lado 
+            <button id="setDateBtn" class="edit-icon-btn" aria-label="Cambiar fecha">✎</button>
+          </span>
+        </div>
+        <div class="counter-divider"></div>
+        <div class="counter-stat">
+          <span class="counter-number" id="discoveredFavoritesCount">0</span>
+          <span class="counter-label">Estrellas Favoritas</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SECCIÓN 1: EL UNIVERSO DE LAS 1,000 ESTRELLAS
+       ========================================================================== -->
+  <section class="section-wrapper" id="universoSection">
+    <div class="section-header">
+      <span class="section-tag tag-emerald">✦ Cosmos Interactivo ✦</span>
+      <h2 class="section-title">El Universo de las 1,000 Estrellas</h2>
+      <p class="section-description">
+        Cada destello en esta galaxia es una palabra de amor y un motivo sincero. Arrastra el espacio, haz zoom 
+        en las nebulosas o toca cualquier estrella para escuchar su suspiro.
+      </p>
+    </div>
+
+    <!-- Contenedor del Cosmos Canvas -->
+    <div class="universe-container" id="universeContainer">
+      <canvas id="universeCanvas"></canvas>
+
+      <!-- HUD Superior -->
+      <div class="universe-hud-top">
+        <div class="universe-instructions-pill">
+          <span>🌌</span>
+          <span>Arrastra para viajar • Rueda para zoom • Haz clic en una estrella</span>
+        </div>
+        <div class="universe-actions-bar">
+          <button class="hud-btn" id="randomStarBtn" title="Viajar a una estrella al azar">
+            <span>🎲</span> Estrella al Azar
+          </button>
+          <button class="hud-btn pink-accent" id="resetUniverseBtn" title="Centrar el cosmos">
+            <span>🎯</span> Centrar
+          </button>
+        </div>
+      </div>
+
+      <!-- HUD Inferior: Selector de Constelaciones -->
+      <div class="universe-hud-bottom">
+        <div class="constellations-scroller">
+          <button class="constellation-filter-pill active" data-constellation="all">
+            ✨ Todas (1,000)
+          </button>
+          <button class="constellation-filter-pill" data-constellation="fe">
+            ✝️ Fe en Dios
+          </button>
+          <button class="constellation-filter-pill" data-constellation="mirada">
+            ✨ Tu Mirada
+          </button>
+          <button class="constellation-filter-pill" data-constellation="sonrisa">
+            🌸 Tu Sonrisa
+          </button>
+          <button class="constellation-filter-pill" data-constellation="alma">
+            💜 Tu Hermosa Alma
+          </button>
+          <button class="constellation-filter-pill" data-constellation="memorias">
+            🍃 Nuestras Memorias
+          </button>
+          <button class="constellation-filter-pill" data-constellation="detalles">
+            🌷 Pequeños Detalles
+          </button>
+          <button class="constellation-filter-pill" data-constellation="futuro">
+            🌌 Nuestro Futuro
+          </button>
+          <button class="constellation-filter-pill" data-constellation="destino">
+            💫 El Destino
+          </button>
+        </div>
+      </div>
+
+      <!-- Tooltip flotante al pasar el mouse por una estrella -->
+      <div id="universeStarTooltip"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MODAL DE DETALLE DE LA ESTRELLA
+       ========================================================================== -->
+  <div class="modal-overlay" id="starDetailModal">
+    <div class="modal-glass-card">
+      <button class="modal-close-btn" id="closeStarModalBtn" aria-label="Cerrar">✕</button>
+      
+      <div class="star-modal-header">
+        <span class="star-modal-constellation" id="modalConstellationName">
+          ✨ Constelación de Tu Sonrisa
+        </span>
+        <span class="star-modal-number" id="modalStarNumber">
+          Estrella #1
+        </span>
+      </div>
+
+      <h3 class="star-modal-title" id="modalStarTitle">Tu risa que lo cura todo</h3>
+      <div class="star-modal-word" id="modalStarWord">Palabra de Amor: "Alegría"</div>
+
+      <div class="star-modal-body" id="modalStarText">
+        "Por esa risa espontánea y contagiosa que tiene el poder de disipar hasta el día más nublado..."
+      </div>
+
+      <div class="star-modal-actions">
+        <div class="star-nav-group">
+          <button class="star-nav-btn" id="modalPrevStarBtn">← Anterior</button>
+          <button class="star-nav-btn" id="modalNextStarBtn">Siguiente →</button>
+        </div>
+
+        <button class="star-fav-btn" id="modalFavBtn">
+          <span>Guardar en favoritas</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECCIÓN 2: EL TOCADISCOS CELESTIAL
+       ========================================================================== -->
+  <section class="section-wrapper" id="tocadiscosSection">
+    <div class="section-header">
+      <span class="section-tag tag-purple">♫ Nuestra Canción ♫</span>
+      <h2 class="section-title">El Tocadiscos Celestial</h2>
+      <p class="section-description">
+        Bajo la aguja de este tocadiscos analógico gira el latido de nuestro amor. 
+        Disfruta la melodía romántica de ensueño y pon la canción especial que guardamos en el corazón.
+      </p>
+    </div>
+
+    <div class="turntable-wrapper">
+      <div id="floatingNotesContainer"></div>
+
+      <div class="turntable-deck">
+        <!-- Lado Izquierdo: Plato y Vinilo Giratorio con Aguja Mecánica -->
+        <div class="platter-area">
+          <div class="turntable-platter-base"></div>
+
+          <!-- Disco de Vinilo con surcos y etiqueta -->
+          <div class="vinyl-disk" id="vinylDisk" title="Haz clic para reproducir o pausar">
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-sheen"></div>
+            <div class="vinyl-label">
+              <img src="assets/album_cover.jpg" alt="Carátula de Álbum Romántico">
+              <div class="vinyl-spindle"></div>
+            </div>
+          </div>
+
+          <!-- Brazo Mecánico con Aguja (Tonearm) -->
+          <div class="tonearm-assembly" id="turntableTonearm" title="Haz clic en la aguja para reproducir">
+            <div class="tonearm-base"></div>
+            <div class="tonearm-counterweight"></div>
+            <div class="tonearm-rod">
+              <div class="tonearm-headshell">
+                <div class="stylus-needle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lado Derecho: Panel de Control y Ecualizador -->
+        <div class="turntable-controls-panel">
+          <div class="track-info-header">
+            <div class="track-badge">
+              <span>●</span> Vinilo en Alta Fidelidad
+            </div>
+            <h3 class="track-title" id="turntableTrackTitle">Si Pudiera</h3>
+            <p class="track-artist" id="turntableTrackArtist">Manuel Medrano • Su Canción Favorita</p>
+          </div>
+
+          <!-- Ecualizador de Barras Animadas -->
+          <div class="equalizer-wrapper" id="equalizerWrapper">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+          </div>
+
+          <!-- Progreso de la pista -->
+          <div class="time-progress-bar">
+            <input type="range" class="progress-slider" id="audioProgress" min="0" max="100" value="0">
+            <div class="time-display">
+              <span id="timeCurrent">00:00</span>
+              <span id="timeTotal">--:--</span>
+            </div>
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="turntable-main-btns">
+            <button class="play-toggle-btn" id="turntablePlayBtn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <span>Reproducir</span>
+            </button>
+
+            <button class="crackle-toggle-btn active" id="toggleCrackleBtn" title="Efecto de sonido de vinilo analógico cálido">
+              <span>📻</span> Crujido
+            </button>
+          </div>
+
+          <!-- Velocidad y Volumen -->
+          <div class="turntable-sub-controls">
+            <div class="volume-control-group">
+              <span style="font-size: 0.9rem;">🔊</span>
+              <input type="range" class="volume-slider" id="turntableVolume" min="0" max="1" step="0.05" value="0.8">
+            </div>
+
+            <div class="speed-buttons">
+              <button class="speed-btn active" id="speed33Btn">33 RPM</button>
+              <button class="speed-btn" id="speed45Btn">45 RPM</button>
+            </div>
+          </div>
+
+          <!-- Selector de Canciones -->
+          <div class="turntable-track-selector">
+            <div class="turntable-track-label">
+              <span>🎵</span> Seleccionar canción en el vinilo:
+            </div>
+            <div class="turntable-track-buttons">
+              <button class="turntable-track-btn active" id="trackBtnMedrano">
+                <span>💖</span> Si Pudiera - Manuel Medrano
+              </button>
+              <button class="turntable-track-btn" id="trackBtnTranquila">
+                <span>🌙</span> Melodía Tranquila
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 3: EL GRAN LIBRO DE LOS 1,000 MOTIVOS
+       ========================================================================== -->
+  <section class="section-wrapper" id="libroSection">
+    <div class="section-header">
+      <span class="section-tag tag-purple">✦ Colección Eterna ✦</span>
+      <h2 class="section-title">El Gran Libro de los 1,000 Motivos</h2>
+      <p class="section-description">
+        Porque una vida entera no alcanzaría para enumerar todas las razones por las que eres tú. 
+        Explora las constelaciones, busca palabras clave o guarda tus motivos favoritos.
+      </p>
+    </div>
+
+    <div class="reasons-book-wrapper">
+      <!-- Barra de Búsqueda -->
+      <div class="book-search-bar-container">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            class="reasons-search-input" 
+            id="reasonsSearchInput" 
+            placeholder="Buscar por motivo, número (ej. #1, #45) o palabra (ej. sonrisa, paz, destino)..."
+          >
+        </div>
+      </div>
+
+      <!-- Filtros por Categoría -->
+      <div class="book-filters-container">
+        <button class="book-filter-btn active" data-filter="all">
+          <span>✨</span> Todos los 1,000
+        </button>
+        <button class="book-filter-btn" data-filter="favorites">
+          <span>⭐</span> Mis Favoritas
+        </button>
+        <button class="book-filter-btn" data-filter="fe">
+          <span>✝️</span> Fe en Dios
+        </button>
+        <button class="book-filter-btn" data-filter="mirada">
+          <span>✨</span> Tu Mirada
+        </button>
+        <button class="book-filter-btn" data-filter="sonrisa">
+          <span>🌸</span> Tu Sonrisa
+        </button>
+        <button class="book-filter-btn" data-filter="alma">
+          <span>💜</span> Tu Hermosa Alma
+        </button>
+        <button class="book-filter-btn" data-filter="memorias">
+          <span>🍃</span> Nuestras Memorias
+        </button>
+        <button class="book-filter-btn" data-filter="detalles">
+          <span>🌷</span> Pequeños Detalles
+        </button>
+        <button class="book-filter-btn" data-filter="futuro">
+          <span>🌌</span> Nuestro Futuro
+        </button>
+        <button class="book-filter-btn" data-filter="destino">
+          <span>💫</span> El Destino
+        </button>
+      </div>
+
+      <!-- Cuadrícula de Motivos -->
+      <div class="reasons-grid" id="reasonsGrid">
+        <!-- Las tarjetas se generan dinámicamente con JavaScript -->
+      </div>
+
+      <!-- Estado Vacío -->
+      <div class="reasons-empty-state hidden" id="reasonsEmptyState">
+        <p style="font-size: 1.2rem; margin-bottom: 8px;">✨ No se encontraron estrellas con esa búsqueda.</p>
+        <p style="font-size: 0.9rem;">Prueba con otra palabra de amor o selecciona otra constelación.</p>
+      </div>
+
+      <!-- Botón Cargar Más -->
+      <div class="load-more-container">
+        <button class="btn-load-more" id="loadMoreReasonsBtn">
+          Cargar más motivos de amor ✦
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 4: CARTA SECRETA (SOBRE 3D Y LACRE)
+       ========================================================================== -->
+  <section class="section-wrapper" id="cartaSection">
+    <div class="section-header">
+      <span class="section-tag tag-emerald">💌 Mensaje del Alma 💌</span>
+      <h2 class="section-title">Una Carta Solo Para Tus Ojos</h2>
+      <p class="section-description">
+        Toca el sello de lacre para romperlo y descubrir las palabras que nacieron desde lo más profundo de mi corazón.
+      </p>
+    </div>
+
+    <div class="letter-section-container">
+      <div class="romantic-envelope" id="romanticEnvelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-seal" id="envelopeSeal" title="Toca para romper el lacre y abrir la carta">
+          ❤
+        </div>
+        <div class="envelope-hint-text">✧ Toca el sello para abrir ✧</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal con la Carta Desplegada -->
+  <div class="modal-overlay" id="letterModal">
+    <div class="letter-parchment">
+      <button class="modal-close-btn" id="closeLetterBtn" aria-label="Cerrar carta">✕</button>
+      
+      <div class="letter-header-date">
+        ✧ Bendecidos por Dios • Para Siempre en Mi Memoria ✧
+      </div>
+
+      <div class="letter-salutation">
+        Para ti, <span id="letterRecipientName">Elizabeth</span>:
+      </div>
+
+      <div class="letter-paragraphs">
+        <p>
+          Si tuviera que elegir un solo instante para quedarme a vivir por toda la eternidad, 
+          sería cualquiera en el que tú estés mirándome y sonriendo. 
+        </p>
+        <p>
+          Creé este universo con mil estrellas porque quería que tuvieras un lugar al cual acudir cuando 
+          dudes de lo inmensamente especial que eres para mí. Cada estrella que brilla allá arriba no es 
+          solo una frase: es un latido de mi pecho, un recuerdo que atesoro y una promesa de estar contigo 
+          en los días de sol y en las noches de tormenta.
+        </p>
+        <p>
+          Doy gracias a Dios cada día por haber cruzado nuestras vidas con un propósito eterno. 
+          Ir juntos a la iglesia, orar tomados de la mano y ver cómo Dios guía nuestro caminar 
+          es el regalo más sagrado que he recibido. Como dice Su palabra en Eclesiastés 4:12, 
+          «cordón de tres dobleces no se rompe pronto», y con Dios en el centro de nosotros, 
+          este amor no tendrá final.
+        </p>
+        <p>
+          Gracias por ser mi paz, mi cómplice, mi inspiración y mi mayor bendición. No hay melodía más dulce 
+          que tu voz, ni cielo más hermoso que tus ojos.
+        </p>
+      </div>
+
+      <div class="letter-signature-area">
+        <div class="letter-closing">Con todo mi amor infinito,</div>
+        <div class="letter-signature">Tuyo por siempre.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECCIÓN 5: LA GRAN PREGUNTA - ¿QUIERES SER MI NOVIA?
+       ========================================================================== -->
+  <section class="section-wrapper proposal-section" id="propuestaSection">
+    <div class="proposal-aurora-glow"></div>
+    <div class="section-header">
+      <span class="section-tag tag-emerald">💍 La Pregunta Más Hermosa 💍</span>
+      <h2 class="section-title">Una Promesa Escrita en las Estrellas</h2>
+      <p class="section-description">
+        Hay momentos en la vida que quedan grabados para la eternidad. Cada segundo que paso a tu lado me confirma 
+        que Dios puso en ti a la persona con la que quiero soñar, reír y construir un futuro.
+      </p>
+    </div>
+
+    <div class="proposal-card-container">
+      <div class="proposal-card" id="proposalCard">
+        <div class="proposal-ring-icon-wrapper">
+          <span class="proposal-ring-sparkle">💍</span>
+        </div>
+
+        <div class="proposal-faith-verse">
+          «El amor jamás se extingue» — 1 Corintios 13:8 ✝️ • Para Elizabeth
+        </div>
+
+        <h3 class="proposal-question-title">
+          Elizabeth, ¿quieres ser mi novia?
+        </h3>
+
+        <p class="proposal-question-text">
+          Elizabeth, doy gracias a Dios por cada instante a tu lado, por tu risa que ilumina mis días y por la paz 
+          que traes a mi vida. No imagino un mejor camino que caminar juntos, de Su mano y de la tuya. 
+          ¿Aceptas ser mi novia y escribir esta historia de amor eterno conmigo?
+        </p>
+
+        <!-- Mensaje lúdico cuando intenta tocar el botón "No" -->
+        <div class="proposal-dodge-hint" id="proposalDodgeMessage">
+          <span>✨ Toca tu respuesta con el corazón ✨</span>
+        </div>
+
+        <!-- Zona Interactiva de Botones -->
+        <div class="proposal-buttons-zone" id="proposalButtonsZone">
+          <button class="btn-proposal-yes" id="proposalYesBtn">
+            <span class="btn-yes-heart">💖</span>
+            <span>¡SÍ, ACEPTO!</span>
+            <span class="btn-yes-stars">✨</span>
+          </button>
+
+          <button class="btn-proposal-no" id="proposalNoBtn">
+            <span>No 🙈</span>
+          </button>
+        </div>
+
+        <div class="proposal-counter-attempts" id="proposalAttemptsCounter" style="display: none;">
+          Intentos de escapar del destino: <span id="dodgeCountNum">0</span> 🤭
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Celebración de la Propuesta -->
+  <div class="modal-overlay" id="proposalCelebrationModal">
+    <div class="proposal-celebration-card">
+      <button class="modal-close-btn" id="closeCelebrationModalBtn" aria-label="Cerrar">✕</button>
+
+      <div class="celebration-rings-banner">
+        <span>💍</span>
+        <span>✨</span>
+        <span>💍</span>
+      </div>
+
+      <div class="celebration-badge">✦ ¡NUESTRA HISTORIA OFICIALMENTE COMIENZA! ✦</div>
+
+      <h2 class="celebration-title">¡DIJISTE QUE SÍ!</h2>
+      <div class="celebration-subtitle">Oficialmente eres mi novia y la dueña de mi corazón, Elizabeth.</div>
+
+      <div class="celebration-body">
+        <p>
+          No tengo palabras suficientes para describir la inmensa felicidad que siento. 
+          Prometo cuidarte, respetarte, hacerte sonreír incluso en los días difíciles 
+          y agradecerle a Dios cada mañana por el regalo de tenerte en mi vida.
+        </p>
+        <p class="celebration-verse">
+          «Cordón de tres dobleces no se rompe pronto» — Eclesiastés 4:12 ✝️
+        </p>
+      </div>
+
+      <div class="celebration-relationship-pill">
+        <span class="pill-dot">💚</span>
+        <span>Novios Oficiales: <strong id="celebrationCoupleNames">Elizabeth &amp; Yo</strong></span>
+        <span class="pill-dot">💜</span>
+      </div>
+
+      <div class="celebration-actions">
+        <button class="celebration-action-btn primary-emerald" id="celebrationPlayMusicBtn">
+          <span>🎶</span> Escuchar Nuestra Canción en el Vinilo
+        </button>
+        <button class="celebration-action-btn secondary-purple" id="celebrationExploreStarsBtn">
+          <span>🪐</span> Explorar Nuestras 1,000 Estrellas
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="romantic-footer">
+    <div class="footer-quote">
+      "En un universo infinito de posibilidades, mi mayor fortuna fue encontrarte a ti."
+    </div>
+    <div class="footer-sub">
+      Creado con amor eterno • Verde Esmeralda y Morado Celestial ✦
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/reasonsData.js"></script>
+  <script src="scripts/turntable.js"></script>
+  <script src="scripts/universe.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

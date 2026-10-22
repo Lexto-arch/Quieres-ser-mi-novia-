@@ -1,0 +1,444 @@
+/* ==========================================================================
+   ESTILOS DEL GRAN LIBRO DE LOS 1,000 MOTIVOS Y LA CARTA SECRETA
+   ========================================================================== */
+
+/* ==========================================================================
+   EXPLORADOR DEL GRAN LIBRO DE MOTIVOS
+   ========================================================================== */
+.reasons-book-wrapper {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 36px;
+  padding: 45px 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Barra de Búsqueda y Filtros */
+.book-search-bar-container {
+  display: flex;
+  gap: 16px;
+  max-width: 720px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.reasons-search-input {
+  width: 100%;
+  background: rgba(18, 9, 36, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 14px 20px 14px 50px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.reasons-search-input:focus {
+  border-color: var(--emerald-400);
+  box-shadow: 0 0 20px var(--emerald-glow);
+  background: rgba(18, 9, 36, 0.95);
+}
+
+.reasons-search-input::placeholder {
+  color: #64748b;
+}
+
+/* Filtros por Categoría en el Libro */
+.book-filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.book-filter-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.book-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.book-filter-btn.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(168, 85, 247, 0.25));
+  border-color: var(--emerald-400);
+  color: #fff;
+  box-shadow: 0 0 15px var(--emerald-glow);
+}
+
+/* ==========================================================================
+   CUADRÍCULA DE TARJETAS DE MOTIVOS (REASONS GRID)
+   ========================================================================== */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 22px;
+  margin-bottom: 45px;
+}
+
+.reason-card {
+  background: var(--glass-bg-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reason-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--emerald-400);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px var(--emerald-glow);
+}
+
+/* Colores de acento según constelación */
+.reason-card.constellation-mirada { border-top: 3px solid #10b981; }
+.reason-card.constellation-sonrisa { border-top: 3px solid #a855f7; }
+.reason-card.constellation-alma { border-top: 3px solid #7c3aed; }
+.reason-card.constellation-memorias { border-top: 3px solid #34d399; }
+.reason-card.constellation-detalles { border-top: 3px solid #059669; }
+.reason-card.constellation-futuro { border-top: 3px solid #c084fc; }
+.reason-card.constellation-destino { border-top: 3px solid #6ee7b7; }
+
+.reason-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reason-num {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--emerald-300);
+}
+
+.reason-fav-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.reason-fav-btn:hover, .reason-fav-btn.active {
+  color: var(--emerald-400);
+  transform: scale(1.15);
+}
+
+.reason-word-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--emerald-300);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.reason-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: #f1f5f9;
+  flex: 1;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.reason-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 12px;
+  font-size: 0.8rem;
+}
+
+.reason-category-tag {
+  color: #94a3b8;
+}
+
+.view-in-sky-btn {
+  background: none;
+  border: none;
+  color: var(--emerald-300);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.view-in-sky-btn:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Botón Cargar Más */
+.load-more-container {
+  text-align: center;
+}
+
+.btn-load-more {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid var(--emerald-400);
+  color: var(--emerald-300);
+  padding: 12px 32px;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+.btn-load-more:hover {
+  background: var(--emerald-500);
+  color: #fff;
+  box-shadow: 0 0 25px var(--emerald-glow);
+  transform: translateY(-2px);
+}
+
+.reasons-empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #94a3b8;
+}
+
+.reasons-empty-state.hidden {
+  display: none;
+}
+
+/* ==========================================================================
+   SECCIÓN DE LA CARTA SECRETA (SOBRE 3D Y LACRE)
+   ========================================================================== */
+.letter-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Sobre Romántico */
+.romantic-envelope {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  background: linear-gradient(135deg, #180929 0%, #062419 100%);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px var(--emerald-glow), 0 0 25px var(--purple-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--emerald-400);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.romantic-envelope:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 45px var(--emerald-glow-strong);
+}
+
+/* Solapa superior triangular */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-top: 110px solid #2e1065;
+  border-radius: 12px 12px 0 0;
+  transform-origin: top center;
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+
+.romantic-envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+/* Sello de lacre Esmeralda Jade */
+.envelope-seal {
+  position: absolute;
+  top: 90px;
+  z-index: 5;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #34d399, #059669, #04291f);
+  border: 2px solid #a7f3d0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 20px var(--emerald-glow-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.4rem;
+  transition: transform 0.25s ease;
+}
+
+.envelope-seal:hover {
+  transform: scale(1.15) rotate(12deg);
+}
+
+.envelope-hint-text {
+  position: absolute;
+  bottom: -40px;
+  font-size: 0.9rem;
+  color: var(--emerald-300);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px var(--emerald-glow);
+}
+
+/* ==========================================================================
+   CARTA DESPLEGADA (MODAL DE PERGAMINO)
+   ========================================================================== */
+.letter-parchment {
+  background: linear-gradient(135deg, #051a12 0%, #120724 100%);
+  border: 2px solid var(--emerald-400);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 50px var(--emerald-glow), 0 0 35px var(--purple-glow);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 680px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.letter-parchment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--emerald-400), var(--purple-400), var(--emerald-300));
+}
+
+.letter-header-date {
+  font-size: 0.85rem;
+  color: var(--emerald-300);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+.letter-salutation {
+  font-family: var(--font-cursive);
+  font-size: 3rem;
+  color: var(--emerald-300);
+  text-shadow: 0 0 20px var(--emerald-glow);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.letter-paragraphs {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  margin-bottom: 30px;
+}
+
+.letter-paragraphs p {
+  margin-bottom: 16px;
+}
+
+.letter-signature-area {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.letter-closing {
+  font-style: italic;
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.letter-signature {
+  font-family: var(--font-cursive);
+  font-size: 2.6rem;
+  color: var(--emerald-300);
+  text-shadow: 0 0 15px var(--emerald-glow);
+  line-height: 1.2;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .reasons-book-wrapper {
+    padding: 25px 16px;
+  }
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+  .romantic-envelope {
+    width: 280px;
+    height: 190px;
+  }
+  .envelope-flap {
+    border-left-width: 140px;
+    border-right-width: 140px;
+    border-top-width: 95px;
+  }
+  .letter-parchment {
+    padding: 28px 18px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 20px;
+  }
+  .letter-salutation {
+    font-size: 2.2rem;
+  }
+  .letter-paragraphs {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .letter-signature {
+    font-size: 2.2rem;
+  }
+}
